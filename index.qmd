@@ -1,0 +1,46 @@
+---
+title: "STAA 566 - Maps"
+author: "Bogarth Hernandez"
+format: html
+editor: visual
+---
+
+## Summary
+
+The lending data comes from 5 years of investment in a crowd-lending platform, the purpuse of creating this tables is to have a scorecard to decide how to invest based on real data of the of the credit's behavior classified by the Credit Score of the solicitant.
+
+The Credit Score can be A for a person who has a very good credit history in the Mexican Bureau of Credit, to G being the lower score. Of course, credits with better score have a lower interest rate. This game is about manage the risk.
+
+**Data Source :**
+
+Personal information about investment from a crowd-lending platform known as Prestadero.
+
+www.prestadero.com
+
+**Formating:**
+
+## R Code
+
+```{r}
+
+library(tidyverse)
+library(gt)
+
+
+
+lending <- read_csv('lending.csv', show_col_types = FALSE)
+
+
+
+lending$capital_int <- lending$interes_p+lending$interes_m+lending$capital_p
+
+#grouping by score
+
+
+lending_t1 <- lending %>% filter(year <= 2019 & status %in% c("PAGADO","LIBERADO"))   %>% select( score, amt_inv, interes_rate, capital_p,  capital_int) %>% group_by(score) %>% summarise(credits=n(), interest_avg =mean(interes_rate),ammount_inv=sum(amt_inv), cap_int =sum(capital_int)) %>% dplyr::mutate(profit_pct =  cap_int/ ammount_inv - 1) %>% gt() 
+
+#formatting
+
+
+
+```
