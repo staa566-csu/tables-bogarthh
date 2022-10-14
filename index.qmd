@@ -42,5 +42,7 @@ lending_t1 <- lending %>% filter(year <= 2019 & status %in% c("PAGADO","LIBERADO
 #formatting
 
 
+lending_t1
+
 
 ```
