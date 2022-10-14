@@ -126,7 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The lending data comes from 5 years of investment in a crowd-lending platform, the purpuse of creating this tables is to have a scorecard to decide how to invest based on real data of the of the credit’s behavior classified by the Credit Score of the solicitant.</p>
+<p>The lending data comes from 5 years of investment in a crowd-lending platform, the purpuse of creating this tables is to have a scorecard to decide how to invest based on real data of the of the credit’s behavior classified by the Credit Score.</p>
 <p>The Credit Score can be A for a person who has a very good credit history in the Mexican Bureau of Credit, to G being the lower score. Of course, credits with better score have a lower interest rate. This game is about manage the risk.</p>
 <p><strong>Data Source :</strong></p>
 <p>Personal information about investment from a crowd-lending platform known as Prestadero.</p>
@@ -164,16 +164,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#formatting</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>lending_t1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#tittles and footnotes</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>lending_t1 <span class="ot">&lt;-</span>   lending_t1 <span class="sc">%&gt;%</span><span class="fu">tab_header</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Performance of Investment by Credit Score**"</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span><span class="fu">md</span>( <span class="st">"*Credit Score* provided by Credit Bureau"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="st">"Source: Crowd-Lending investment, credits granted between 2017 and 2019."</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>lending_t1 <span class="ot">&lt;-</span>  lending_t1 <span class="sc">%&gt;%</span> <span class="fu">cols_label</span>( <span class="at">score =</span> <span class="fu">md</span>(<span class="st">"**Credit </span><span class="sc">\n</span><span class="st"> Score**"</span>), <span class="at">credits =</span> <span class="fu">md</span>(<span class="st">"**Credits**"</span>), <span class="at">interest_avg =</span> <span class="fu">md</span>(<span class="st">"**Interest Rate**</span><span class="sc">\n</span><span class="st">(Average)"</span>), <span class="at">ammount_inv =</span> <span class="fu">md</span>(<span class="st">"**Ammount Invested**"</span>), <span class="at">cap_int =</span> <span class="fu">md</span>(<span class="st">"**Capital + Interest**"</span>), <span class="at">profit_pct =</span> <span class="fu">md</span>(<span class="st">"**Profit Percentage**"</span>))</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>lending_t1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="inrptygoql" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bgobmbumor" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#inrptygoql .gt_table {
+#bgobmbumor .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -198,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#inrptygoql .gt_heading {
+#bgobmbumor .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -210,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#inrptygoql .gt_title {
+#bgobmbumor .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -222,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#inrptygoql .gt_subtitle {
+#bgobmbumor .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -234,13 +244,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#inrptygoql .gt_bottom_border {
+#bgobmbumor .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#inrptygoql .gt_col_headings {
+#bgobmbumor .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -255,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#inrptygoql .gt_col_heading {
+#bgobmbumor .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -275,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#inrptygoql .gt_column_spanner_outer {
+#bgobmbumor .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -287,15 +297,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#inrptygoql .gt_column_spanner_outer:first-child {
+#bgobmbumor .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#inrptygoql .gt_column_spanner_outer:last-child {
+#bgobmbumor .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#inrptygoql .gt_column_spanner {
+#bgobmbumor .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -307,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#inrptygoql .gt_group_heading {
+#bgobmbumor .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -332,7 +342,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#inrptygoql .gt_empty_group_heading {
+#bgobmbumor .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -347,15 +357,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#inrptygoql .gt_from_md > :first-child {
+#bgobmbumor .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#inrptygoql .gt_from_md > :last-child {
+#bgobmbumor .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#inrptygoql .gt_row {
+#bgobmbumor .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#inrptygoql .gt_stub {
+#bgobmbumor .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#inrptygoql .gt_stub_row_group {
+#bgobmbumor .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -401,11 +411,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#inrptygoql .gt_row_group_first td {
+#bgobmbumor .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#inrptygoql .gt_summary_row {
+#bgobmbumor .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -415,16 +425,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#inrptygoql .gt_first_summary_row {
+#bgobmbumor .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#inrptygoql .gt_first_summary_row.thick {
+#bgobmbumor .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#inrptygoql .gt_last_summary_row {
+#bgobmbumor .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -434,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#inrptygoql .gt_grand_summary_row {
+#bgobmbumor .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -444,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#inrptygoql .gt_first_grand_summary_row {
+#bgobmbumor .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -454,11 +464,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#inrptygoql .gt_striped {
+#bgobmbumor .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#inrptygoql .gt_table_body {
+#bgobmbumor .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -467,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#inrptygoql .gt_footnotes {
+#bgobmbumor .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -481,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#inrptygoql .gt_footnote {
+#bgobmbumor .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -490,7 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#inrptygoql .gt_sourcenotes {
+#bgobmbumor .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -504,7 +514,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#inrptygoql .gt_sourcenote {
+#bgobmbumor .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -512,77 +522,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#inrptygoql .gt_left {
+#bgobmbumor .gt_left {
   text-align: left;
 }
 
-#inrptygoql .gt_center {
+#bgobmbumor .gt_center {
   text-align: center;
 }
 
-#inrptygoql .gt_right {
+#bgobmbumor .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#inrptygoql .gt_font_normal {
+#bgobmbumor .gt_font_normal {
   font-weight: normal;
 }
 
-#inrptygoql .gt_font_bold {
+#bgobmbumor .gt_font_bold {
   font-weight: bold;
 }
 
-#inrptygoql .gt_font_italic {
+#bgobmbumor .gt_font_italic {
   font-style: italic;
 }
 
-#inrptygoql .gt_super {
+#bgobmbumor .gt_super {
   font-size: 65%;
 }
 
-#inrptygoql .gt_footnote_marks {
+#bgobmbumor .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#inrptygoql .gt_asterisk {
+#bgobmbumor .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#inrptygoql .gt_indent_1 {
+#bgobmbumor .gt_indent_1 {
   text-indent: 5px;
 }
 
-#inrptygoql .gt_indent_2 {
+#bgobmbumor .gt_indent_2 {
   text-indent: 10px;
 }
 
-#inrptygoql .gt_indent_3 {
+#bgobmbumor .gt_indent_3 {
   text-indent: 15px;
 }
 
-#inrptygoql .gt_indent_4 {
+#bgobmbumor .gt_indent_4 {
   text-indent: 20px;
 }
 
-#inrptygoql .gt_indent_5 {
+#bgobmbumor .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table">
-  
+  <thead class="gt_header">
+    <tr>
+      <td colspan="6" class="gt_heading gt_title gt_font_normal" style=""><strong>Performance of Investment by Credit Score</strong></td>
+    </tr>
+    <tr>
+      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style=""><em>Credit Score</em> provided by Credit Bureau</td>
+    </tr>
+  </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">score</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">credits</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">interest_avg</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ammount_inv</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">cap_int</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">profit_pct</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col"><strong>Credit
+Score</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"><strong>Credits</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"><strong>Interest Rate</strong>
+(Average)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"><strong>Ammount Invested</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"><strong>Capital + Interest</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"><strong>Profit Percentage</strong></th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -629,7 +648,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td class="gt_row gt_right">3686.879</td>
 <td class="gt_row gt_right">-0.13249915</td></tr>
   </tbody>
-  
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="6">Source: Crowd-Lending investment, credits granted between 2017 and 2019.</td>
+    </tr>
+  </tfoot>
   
 </table>
 </div>

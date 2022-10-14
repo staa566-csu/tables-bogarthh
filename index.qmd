@@ -7,7 +7,7 @@ editor: visual
 
 ## Summary
 
-The lending data comes from 5 years of investment in a crowd-lending platform, the purpuse of creating this tables is to have a scorecard to decide how to invest based on real data of the of the credit's behavior classified by the Credit Score of the solicitant.
+The lending data comes from 5 years of investment in a crowd-lending platform, the purpuse of creating this tables is to have a scorecard to decide how to invest based on real data of the of the credit's behavior classified by the Credit Score.
 
 The Credit Score can be A for a person who has a very good credit history in the Mexican Bureau of Credit, to G being the lower score. Of course, credits with better score have a lower interest rate. This game is about manage the risk.
 
@@ -41,8 +41,16 @@ lending_t1 <- lending %>% filter(year <= 2019 & status %in% c("PAGADO","LIBERADO
 
 #formatting
 
+#tittles and footnotes
+lending_t1 <-   lending_t1 %>%tab_header(
+    title = md("**Performance of Investment by Credit Score**"),
+    subtitle =md( "*Credit Score* provided by Credit Bureau")
+  ) %>%  tab_source_note(
+    source_note = "Source: Crowd-Lending investment, credits granted between 2017 and 2019."
+  )
+
+#
+lending_t1 <-  lending_t1 %>% cols_label( score = md("**Credit \n Score**"), credits = md("**Credits**"), interest_avg = md("**Interest Rate**\n(Average)"), ammount_inv = md("**Ammount Invested**"), cap_int = md("**Capital + Interest**"), profit_pct = md("**Profit Percentage**"))
 
 lending_t1
-
-
 ```
